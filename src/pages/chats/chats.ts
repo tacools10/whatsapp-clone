@@ -4,6 +4,8 @@ import * as moment from 'moment';
 import {Chat, MessageType} from 'api/models';
 import {Chats} from "api/collections/chats";
 import {Messages} from "api/collections/messages";
+import {NavController} from "ionic-angular";
+import {MessagesPage} from '../messages/messages';
 
 
 @Component({
@@ -13,7 +15,7 @@ export class ChatsPage implements OnInit {
 
   chats;
 
-  constructor() {
+  constructor(private navCtrl : NavController) {
   }
 
   ngOnInit() {
@@ -32,6 +34,10 @@ export class ChatsPage implements OnInit {
           )
         )
       ).zone();
+  }
+
+  showMessages(chat) : void {
+    this.navCtrl.push(MessagesPage, {chat});
   }
 
   removeChat(chat: Chat): void {

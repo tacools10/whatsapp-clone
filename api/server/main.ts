@@ -3,6 +3,7 @@ import {Chats} from "./collections/chats";
 import {Messages} from "./collections/messages";
 import moment = require("moment");
 import {MessageType} from "./models";
+import {Mongo} from 'meteor/mongo';
 
   Meteor.startup(() => {
     if (Chats.find({}).cursor.count() === 0) {

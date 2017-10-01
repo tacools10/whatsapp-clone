@@ -12,6 +12,8 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "target": "es5",
+    "removeComments": false,
+    "isolatedModules": false,
     "skipLibCheck": true,
     "stripInternal": true,
     "noImplicitAny": false,

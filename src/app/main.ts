@@ -2,6 +2,6 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app.module';
 
-import 'meteor-client'
+import 'meteor-client';
 
 platformBrowserDynamic().bootstrapModule(AppModule);
