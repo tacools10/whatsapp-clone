@@ -5,7 +5,7 @@ import {Observable} from "rxjs/Observable";
 import {Messages} from "api/collections/messages";
 import {MeteorObservable} from "meteor-rxjs";
 import * as moment from 'moment';
-import { _ } from 'meteor/underscore';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'messages-page',
