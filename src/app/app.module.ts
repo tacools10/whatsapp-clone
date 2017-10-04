@@ -7,12 +7,22 @@ import { MomentModule } from 'angular2-moment';
 import { MyApp } from './app.component';
 import {ChatsPage} from "../pages/chats/chats";
 import {MessagesPage} from "../pages/messages/messages";
+import {PhoneService} from "../services/phone";
+import {LoginPage} from "../pages/login/login";
+import {VerificationPage} from "../pages/verification/verification";
+import {Profile} from "api/models";
+import {ProfilePage} from "../pages/profile/profile";
+import {ChatsOptionsComponent} from "../pages/chats/chat-options";
 
 @NgModule({
   declarations: [
     MyApp,
     ChatsPage,
-    MessagesPage
+    MessagesPage,
+    LoginPage,
+    VerificationPage,
+    ProfilePage,
+    ChatsOptionsComponent
   ],
   imports: [
     BrowserModule,
@@ -23,12 +33,17 @@ import {MessagesPage} from "../pages/messages/messages";
   entryComponents: [
     MyApp,
     ChatsPage,
-    MessagesPage
+    MessagesPage,
+    LoginPage,
+    VerificationPage,
+    ProfilePage,
+    ChatsOptionsComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    PhoneService
   ]
 })
 export class AppModule {}

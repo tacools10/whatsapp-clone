@@ -4,8 +4,9 @@ import * as moment from 'moment';
 import {Chat, MessageType} from 'api/models';
 import {Chats} from "api/collections/chats";
 import {Messages} from "api/collections/messages";
-import {NavController} from "ionic-angular";
+import {NavController, PopoverController} from "ionic-angular";
 import {MessagesPage} from '../messages/messages';
+import {ChatsOptionsComponent} from "./chat-options";
 
 
 @Component({
@@ -15,7 +16,9 @@ export class ChatsPage implements OnInit {
 
   chats;
 
-  constructor(private navCtrl : NavController) {
+  constructor(
+    private navCtrl : NavController,
+    private popoverCtrl : PopoverController) {
   }
 
   ngOnInit() {
@@ -43,6 +46,14 @@ export class ChatsPage implements OnInit {
   removeChat(chat: Chat): void {
     Chats.remove({_id: chat._id}).subscribe(() => {
     });
+  }
+
+  showOptions(): void {
+    const popover = this.popoverCtrl.create(ChatsOptionsComponent, {}, {
+      cssClass: 'options-popover chats-options-popover'
+    });
+
+    popover.present();
   }
 
 }
